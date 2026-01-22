@@ -1,0 +1,9 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires Power BI
+*.pbix.backup
+
+# Logs
+*.log
