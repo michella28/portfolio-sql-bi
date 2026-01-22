@@ -46,3 +46,20 @@ GROUP BY
     p.Description
 ORDER BY 
     chiffre_affaires DESC;
+
+/*
+Requête 4 : Chiffre d'affaires par pays
+Objectif : Identifier les pays les plus rentables
+*/
+
+SELECT 
+    c.Country,
+    SUM(s.Quantity * s.UnitPrice) AS chiffre_affaires
+FROM clients c
+INNER JOIN sales s
+    ON c.CustomerID = s.CustomerID
+GROUP BY 
+    c.Country
+ORDER BY 
+    chiffre_affaires DESC;
+
