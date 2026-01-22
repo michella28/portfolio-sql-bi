@@ -14,3 +14,17 @@ GROUP BY
     c.customer_id,
     c.country
 ORDER BY chiffre_affaires DESC; -- Analyse des clients les plus rentables
+
+/*
+Requête 2 : Clients sans commandes
+Objectif : Identifier les clients qui n’ont passé aucune commande
+*/
+
+SELECT 
+    c.CustomerID,
+    c.Country
+FROM customers c
+LEFT JOIN sales s
+    ON c.CustomerID = s.CustomerID
+WHERE s.InvoiceNo IS NULL
+ORDER BY c.CustomerID;
