@@ -28,3 +28,21 @@ LEFT JOIN sales s
     ON c.CustomerID = s.CustomerID
 WHERE s.InvoiceNo IS NULL
 ORDER BY c.CustomerID;
+
+/*
+Requête 3 : Chiffre d'affaires par produit
+Objectif : Identifier les produits les plus rentables
+*/
+
+SELECT 
+    p.StockCode, 
+    p.Description, 
+    SUM(s.Quantity * s.UnitPrice) AS chiffre_affaires
+FROM produits p
+INNER JOIN sales s
+    ON p.StockCode = s.StockCode
+GROUP BY 
+    p.StockCode, 
+    p.Description
+ORDER BY 
+    chiffre_affaires DESC;
