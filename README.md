@@ -75,7 +75,7 @@ Les traitements SQL incluent notamment :
 **KPI**
 - Chiffre d’affaires = `SUMX(sales, Quantity * UnitPrice)`
 
-**Visuels**
+**Visuel**
 - Carte KPI : Chiffre d’affaires total
 - Graphique en barres : Top 10 pays par chiffre d’affaires
  
@@ -91,7 +91,7 @@ Les traitements SQL incluent notamment :
 **KPI**
 - Chiffre d’affaires (même mesure)
 
-**Visuels**
+**Visuel**
 - Graphique en barres : Top 10 produits par chiffre d’affaires
 - Infobulle (tooltip) : StockCode pour une identification précise
 
