@@ -1,53 +1,127 @@
-# portfolio-sql-bi
-Analyse des ventes avec SQL et Power BI : nettoyage des données, jointures, KPI et tableaux de bord décisionnels
+# Portfolio SQL & Power BI — Analyse des ventes e-commerce
 
-# Analyse des ventes – SQL & Power BI
+Analyse des ventes avec SQL et Power BI : nettoyage des données, jointures, KPI et tableaux de bord décisionnels à partir d’un dataset e-commerce réel.
+
+---
 
 ## 1. Contexte
-Ce projet a pour objectif d’analyser les ventes d’une entreprise de e-commerce afin de fournir des indicateurs
-clés pour aider à la prise de décision business.
+
+Ce projet a pour objectif d’analyser les ventes d’une entreprise de e-commerce afin de fournir des indicateurs clés permettant d’éclairer la prise de décision business (performance commerciale, répartition géographique, produits les plus rentables).
+
+Le projet s’inscrit dans une démarche de bout en bout :
+- exploration et nettoyage des données,
+- modélisation analytique,
+- création de KPI,
+- restitution via des tableaux de bord Power BI.
+
+---
 
 ## 2. Problématique
-Comment identifier les leviers de performance commerciale à partir des données de ventes, clients et produits ?
+
+**Comment identifier les principaux leviers de performance commerciale à partir des données de ventes et de clients ?**
+
+---
 
 ## 3. Données utilisées
-Le jeu de données contient des informations sur :
-- les ventes (quantité, prix, date)
-- les clients (identifiant, pays)
-- les produits (identifiant, description)
+
+Le projet s’appuie sur le dataset **Online Retail (UCI)**.
+
+Les données contiennent :
+- des informations sur les **ventes** (quantité, prix unitaire, date, produit, client),
+- des informations sur les **clients** (identifiant, pays).
+
+> **Note de modélisation**  
+> Les informations produit (StockCode, Description) sont conservées dans la table des ventes.  
+> Le dataset ne garantissant pas l’unicité des produits, une table Produits dédiée n’a pas été conservée afin d’assurer un modèle Power BI cohérent et exploitable.
+
+---
 
 ## 4. Méthodologie
-- Nettoyage et transformation des données avec SQL
-- Jointures entre les tables ventes, clients et produits
-- Agrégation des données pour créer des indicateurs métier
-- Visualisation des résultats dans Power BI
+
+- Nettoyage et transformation des données (SQL et Power Query)
+- Création des relations entre les tables ventes et clients
+- Calcul des indicateurs métier (chiffre d’affaires, agrégations)
+- Construction de tableaux de bord décisionnels dans Power BI
+- Validation de la cohérence des résultats via plusieurs visuels
+
+---
 
 ## 5. Traitements SQL
-Exemples de requêtes réalisées :
-- Calcul du chiffre d’affaires total
-- Analyse des ventes par client et par produit
-- Identification des clients les plus rentables
-- Analyse temporelle des ventes
 
-(Les requêtes SQL sont disponibles dans le dossier /queries)
+Les traitements SQL incluent notamment :
+- calcul du chiffre d’affaires,
+- jointures entre ventes et clients,
+- analyses par client, pays et produit,
+- identification des entités les plus performantes.
+
+📁 Les requêtes SQL sont disponibles dans le dossier `/queries`.
+
+---
 
 ## 6. Modélisation Power BI
-- Modèle en étoile avec la table des ventes comme table centrale
-- Relations entre les tables clients, produits et ventes
-- Création de mesures DAX simples pour les indicateurs clés
 
-## 7. Résultats clés
-- Identification des clients et produits les plus performants
-- Mise en évidence des tendances de ventes dans le temps
-- Analyse de la répartition du chiffre d’affaires par pays
+- Table de faits : `sales`
+- Table de dimension : `customers`
+- Relation :  
+  `customers[CustomerID] (1)` → `sales[CustomerID] (*)`
+- Création de mesures DAX pour les indicateurs clés
 
-## 8. Recommandations business
-- Concentrer les efforts commerciaux sur les clients à forte valeur
-- Optimiser le catalogue produit en mettant en avant les meilleures ventes
-- Adapter la stratégie commerciale selon les zones géographiques
+---
 
-## 9. Outils utilisés
+## 7. Questions métier & visualisations
+
+### Question métier 1 — Quel pays génère le plus de chiffre d’affaires ?
+
+**KPI**
+- Chiffre d’affaires = `SUMX(sales, Quantity * UnitPrice)`
+
+**Visuels**
+- Carte KPI : Chiffre d’affaires total
+- Graphique en barres : Top 10 pays par chiffre d’affaires
+ 
+`/screenshots/q1_top10_pays_ca.png`
+
+**Analyse**
+> Cette analyse permet d’identifier les marchés les plus rentables et de prioriser les efforts commerciaux par zone géographique.
+
+---
+
+### Question métier 2 — Quels produits génèrent le plus de chiffre d’affaires ?
+
+**KPI**
+- Chiffre d’affaires (même mesure)
+
+**Visuels**
+- Graphique en barres : Top 10 produits par chiffre d’affaires
+- Infobulle (tooltip) : StockCode pour une identification précise
+
+`/screenshots/q2_top10_produits_ca.png`
+
+**Analyse**
+> Cette analyse met en évidence les produits les plus contributeurs au chiffre d’affaires et peut guider les décisions liées au catalogue et aux actions marketing.
+
+---
+
+## 8. Résultats clés
+
+- Forte concentration du chiffre d’affaires sur un nombre limité de pays
+- Identification claire des produits les plus rentables
+- Données exploitables pour orienter une stratégie commerciale et géographique
+
+---
+
+## 9. Recommandations business
+
+- Prioriser les marchés générant le plus de chiffre d’affaires
+- Mettre en avant les produits les plus performants
+- Ajuster la stratégie commerciale selon la répartition géographique des ventes
+
+---
+
+## 10. Outils utilisés
+
 - SQL
 - Power BI
+- Power Query
+- DAX
 - Git / GitHub
-
