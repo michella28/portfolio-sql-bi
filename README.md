@@ -79,7 +79,7 @@ Les traitements SQL incluent notamment :
 - Carte KPI : Chiffre d’affaires total
 - Graphique en barres : Top 10 pays par chiffre d’affaires
  
-`/screenshots/q1_top10_pays_ca.png`
+![Top 10 pays par CA](screenshots/top_10_pays.png)
 
 **Analyse**
 > Cette analyse permet d’identifier les marchés les plus rentables et de prioriser les efforts commerciaux par zone géographique.
@@ -95,7 +95,7 @@ Les traitements SQL incluent notamment :
 - Graphique en barres : Top 10 produits par chiffre d’affaires
 - Infobulle (tooltip) : StockCode pour une identification précise
 
-`/screenshots/q2_top10_produits_ca.png`
+![Top 10 produits par chiffre d’affaires](screenshots/top_10_produits.png)
 
 **Analyse**
 > Cette analyse met en évidence les produits les plus contributeurs au chiffre d’affaires et peut guider les décisions liées au catalogue et aux actions marketing.
