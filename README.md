@@ -114,7 +114,7 @@ Identifier les clients à forte valeur afin de mieux comprendre la concentration
 - Graphique en barres – **Top 10 clients par chiffre d’affaires**
 - Exclusion des clients non identifiés (`CustomerID` vide)
 
-![Top 10 clients par chiffre d'affaires](screenshots/q3_top10_clients.png)
+![Top 10 clients par chiffre d'affaires](screenshots/top10_clients.png)
 
 ### Analyse
 Le chiffre d’affaires est fortement concentré sur un nombre limité de clients à forte valeur.  
