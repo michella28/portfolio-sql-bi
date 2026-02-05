@@ -100,6 +100,55 @@ Les traitements SQL incluent notamment :
 **Analyse**
 > Cette analyse met en évidence les produits les plus contributeurs au chiffre d’affaires et peut guider les décisions liées au catalogue et aux actions marketing.
 
+## Question métier 3 — Quels clients génèrent le plus de chiffre d’affaires ?
+
+### Objectif business
+Identifier les clients à forte valeur afin de mieux comprendre la concentration du chiffre d’affaires et les opportunités de fidélisation.
+
+### Indicateurs clés
+- **Chiffre d’affaires** : somme de `Quantity × UnitPrice`
+- **CustomerID**
+- **Pays** (information complémentaire)
+
+### Visualisation Power BI
+- Graphique en barres – **Top 10 clients par chiffre d’affaires**
+- Exclusion des clients non identifiés (`CustomerID` vide)
+
+📸 *Capture d’écran du visuel Power BI*  
+![Top 10 clients par CA](screenshots/q3_top10_clients_ca.png)
+
+### Analyse
+Le chiffre d’affaires est fortement concentré sur un nombre limité de clients à forte valeur.  
+Cette dépendance à certains clients clés représente à la fois une opportunité de fidélisation et un risque potentiel en cas de perte de ces clients.
+
+---
+
+## Question métier 4 — Comment évolue le chiffre d’affaires dans le temps ?
+
+### Objectif business
+Analyser l’évolution du chiffre d’affaires afin d’identifier des tendances globales et d’éventuels effets de saisonnalité.
+
+### Indicateurs clés
+- **Chiffre d’affaires**
+- **Date de commande** (agrégée par mois et par année)
+
+### Visualisation Power BI
+- Graphique en courbe – **Évolution mensuelle du chiffre d’affaires**
+- Axe temporel basé sur la hiérarchie de dates (année / mois)
+
+📸 *Capture d’écran du visuel Power BI*  
+![Évolution du CA dans le temps](screenshots/q4_evolution_ca_temps.png)
+
+### Analyse
+L’analyse met en évidence des pics récurrents de chiffre d’affaires au mois de novembre sur plusieurs années, suggérant une saisonnalité marquée en fin d’année.  
+Ces variations peuvent être prises en compte dans la planification commerciale et les actions marketing.
+
+---
+
+### Note méthodologique
+Les analyses sont basées sur les données disponibles dans le dataset *Online Retail (UCI)*.  
+Certaines variations observées peuvent être influencées par la couverture temporelle incomplète de certaines périodes.
+
 ---
 
 ## 8. Résultats clés
