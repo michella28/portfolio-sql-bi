@@ -79,7 +79,7 @@ Les traitements SQL incluent notamment :
 - Carte KPI : Chiffre d’affaires total
 - Graphique en barres : Top 10 pays par chiffre d’affaires
  
-![Top 10 pays par CA](screenshots/top_10_pays.png)
+![Top 10 pays par CA](screenshots/top10_pays.png)
 
 **Analyse**
 > Cette analyse permet d’identifier les marchés les plus rentables et de prioriser les efforts commerciaux par zone géographique.
@@ -95,7 +95,7 @@ Les traitements SQL incluent notamment :
 - Graphique en barres : Top 10 produits par chiffre d’affaires
 - Infobulle (tooltip) : StockCode pour une identification précise
 
-![Top 10 produits par chiffre d’affaires](screenshots/top_10_produits.png)
+![Top 10 produits par chiffre d’affaires](screenshots/top10_produits.png)
 
 **Analyse**
 > Cette analyse met en évidence les produits les plus contributeurs au chiffre d’affaires et peut guider les décisions liées au catalogue et aux actions marketing.
@@ -114,8 +114,7 @@ Identifier les clients à forte valeur afin de mieux comprendre la concentration
 - Graphique en barres – **Top 10 clients par chiffre d’affaires**
 - Exclusion des clients non identifiés (`CustomerID` vide)
 
-📸 *Capture d’écran du visuel Power BI*  
-![Top 10 clients par CA](screenshots/q3_top10_clients_ca.png)
+![Top 10 clients par chiffre d'affaires](screenshots/q3_top10_clients.png)
 
 ### Analyse
 Le chiffre d’affaires est fortement concentré sur un nombre limité de clients à forte valeur.  
@@ -136,8 +135,7 @@ Analyser l’évolution du chiffre d’affaires afin d’identifier des tendance
 - Graphique en courbe – **Évolution mensuelle du chiffre d’affaires**
 - Axe temporel basé sur la hiérarchie de dates (année / mois)
 
-📸 *Capture d’écran du visuel Power BI*  
-![Évolution du CA dans le temps](screenshots/q4_evolution_ca_temps.png)
+![Évolution du chiffre d'affaires dans le temps](screenshots/evolution_ca.png)
 
 ### Analyse
 L’analyse met en évidence des pics récurrents de chiffre d’affaires au mois de novembre sur plusieurs années, suggérant une saisonnalité marquée en fin d’année.  
