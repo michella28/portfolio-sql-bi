@@ -1,4 +1,4 @@
-# Portfolio SQL & Power BI — Analyse des ventes e-commerce
+# Portfolio SQL & Power BI - Analyse des ventes e-commerce
 
 Analyse des ventes avec SQL et Power BI : nettoyage des données, jointures, KPI et tableaux de bord décisionnels à partir d’un dataset e-commerce réel.
 
